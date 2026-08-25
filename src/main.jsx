@@ -720,8 +720,6 @@ const Footer = () => {
               <li><a href="#products" className="hover:text-sky-600 transition-colors">Flour & Wheat</a></li>
               <li><a href="#products" className="hover:text-sky-600 transition-colors">Edible Oil</a></li>
               <li><a href="#products" className="hover:text-sky-600 transition-colors">Lentils</a></li>
-              <li><a href="#products" className="hover:text-sky-600 transition-colors">Natural Stone</a></li>
-              <li><a href="#products" className="hover:text-sky-600 transition-colors">Certification</a></li>
             </ul>
           </div>
           
