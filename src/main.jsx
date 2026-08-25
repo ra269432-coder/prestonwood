@@ -693,66 +693,66 @@ const Testimonial = () => {
 
 const Footer = () => {
   return (
-    <footer className="relative bg-neutral-900 text-white pt-20 pb-12 overflow-hidden border-t-4 border-neutral-500">
-      <div className="absolute inset-0 z-0 opacity-10 mix-blend-luminosity">
+    <footer className="relative bg-amber-50 text-amber-950 pt-8 pb-8 overflow-hidden border-t-4 border-amber-200">
+      <div className="absolute inset-0 z-0 opacity-[0.03]">
         <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Footer bg" className="w-full h-full object-cover" />
       </div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="bg-slate-900/80 p-4 rounded-lg inline-block mb-8 shadow-xl border border-slate-800">
+            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-lg inline-block mb-4 shadow-md border border-amber-200">
               <div className="flex items-center space-x-2">
-                 <img src="/logo.jpg" alt="Logo" className="w-20 h-20 object-cover rounded-full border border-slate-700 bg-slate-900" onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=P+W&background=2563EB&color=fff&rounded=true" }} />
-                 <span className="text-2xl font-bold text-white tracking-tight uppercase">PRESTONWOOD <span className="text-sky-500">TRADING LIMITED</span></span>
+                 <img src="/logo.jpg" alt="Logo" className="w-20 h-20 object-cover rounded-full border border-amber-200 bg-white" onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=P+W&background=2563EB&color=fff&rounded=true" }} />
+                 <span className="text-2xl font-bold text-amber-950 tracking-tight uppercase">PRESTONWOOD <span className="text-sky-600">TRADING LIMITED</span></span>
               </div>
             </div>
-            <p className="text-slate-400 leading-relaxed text-sm mb-2 font-medium">Premium commodities. Trusted worldwide.</p>
-            <p className="text-slate-400 leading-relaxed text-sm">
+            <p className="text-amber-900 leading-relaxed text-base mb-1 font-medium">Premium commodities. Trusted worldwide.</p>
+            <p className="text-amber-900 leading-relaxed text-base font-medium">
               Import, export and wholesale distribution of food commodities and natural stone from Dhaka.
             </p>
           </div>
           
           <div>
-            <h4 className="text-xl font-serif font-bold text-white mb-8">Our Products</h4>
-            <ul className="space-y-4 text-slate-300 text-sm">
-              <li><a href="#products" className="hover:text-white transition-colors">Rice</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Sugar</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Flour & Wheat</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Edible Oil</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Lentils</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Natural Stone</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Certification</a></li>
+            <h4 className="text-xl font-serif font-bold text-amber-950 mb-4">Our Products</h4>
+            <ul className="space-y-2 text-amber-900 text-base font-medium">
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Rice</a></li>
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Sugar</a></li>
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Flour & Wheat</a></li>
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Edible Oil</a></li>
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Lentils</a></li>
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Natural Stone</a></li>
+              <li><a href="#products" className="hover:text-sky-600 transition-colors">Certification</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-xl font-serif font-bold text-white mb-8">Contact Us</h4>
-            <div className="space-y-4">
-              <div className="flex items-start border-b border-slate-800/50 pb-4">
-                <div className="w-20 text-sky-500 font-bold text-xs mt-1">Office</div>
-                <div className="flex-1 text-slate-300 text-sm">
+            <h4 className="text-xl font-serif font-bold text-amber-950 mb-4">Contact Us</h4>
+            <div className="space-y-2">
+              <div className="flex items-start border-b border-amber-200/60 pb-2">
+                <div className="w-24 text-sky-600 font-bold text-sm mt-1 uppercase tracking-wider">Office</div>
+                <div className="flex-1 text-amber-900 text-base font-medium">
                   Dhaka Office: House-1263 (Level-3), Road-10, Avenue 2, Mirpur DOHS, Dhaka-1216, Bangladesh.
                 </div>
               </div>
-              <div className="flex items-center border-b border-slate-800/50 pb-4">
-                <div className="w-20 text-sky-500 font-bold text-xs">Direct</div>
-                <div className="flex-1 text-slate-300 text-sm">+880 1811-810351</div>
+              <div className="flex items-center border-b border-amber-200/60 pb-2">
+                <div className="w-24 text-sky-600 font-bold text-sm uppercase tracking-wider">Direct</div>
+                <div className="flex-1 text-amber-900 text-base font-medium">+880 1811-810351</div>
               </div>
-              <div className="flex items-center border-b border-slate-800/50 pb-4">
-                <div className="w-20 text-sky-500 font-bold text-xs">Call</div>
-                <div className="flex-1 text-slate-300 text-sm">+880 1883-079289</div>
+              <div className="flex items-center border-b border-amber-200/60 pb-2">
+                <div className="w-24 text-sky-600 font-bold text-sm uppercase tracking-wider">Call</div>
+                <div className="flex-1 text-amber-900 text-base font-medium">+880 1883-079289</div>
               </div>
               <div className="flex items-center">
-                <div className="w-20 text-sky-500 font-bold text-xs">Email</div>
-                <div className="flex-1 text-slate-300 text-sm break-all">info@prestonwoodtrading.com</div>
+                <div className="w-24 text-sky-600 font-bold text-sm uppercase tracking-wider">Email</div>
+                <div className="flex-1 text-amber-900 text-base font-medium break-all">info@prestonwoodtrading.com</div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-10 right-10 z-20 hidden md:block">
-        <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="w-12 h-12 bg-sky-500 hover:bg-sky-400 text-white rounded-full flex items-center justify-center transition-colors shadow-xl">
+      <div className="absolute bottom-6 right-6 z-20 hidden md:block">
+        <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="w-12 h-12 bg-sky-600 hover:bg-sky-500 text-white rounded-full flex items-center justify-center transition-colors shadow-lg">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
           </svg>
