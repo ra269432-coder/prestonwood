@@ -17,7 +17,10 @@ import {
   PieChart,
   Globe,
   ShieldCheck,
-  Quote
+  Quote,
+  Truck,
+  Map,
+  Flag
 } from 'lucide-react';
 import './styles.css';
 
@@ -59,21 +62,21 @@ const Navbar = () => {
       </div>
 
       {/* Main Nav */}
-      <div className={`bg-slate-900 transition-all duration-300 ${isScrolled ? 'shadow-lg shadow-sky-900/20 py-2' : 'py-4'}`}>
+      <div className={`bg-white transition-all duration-300 ${isScrolled ? 'shadow-lg shadow-slate-200 py-2' : 'py-4'}`}>
         <div className="container mx-auto px-4 flex justify-between items-center">
           <a href="#" className="flex items-center space-x-3">
-            <img src="/logo.jpg" alt="Logo" className="w-16 h-16 object-cover drop-shadow-2xl rounded-full border-2 border-slate-700 bg-slate-900" onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=P+W&background=2563EB&color=fff&rounded=true" }} />
-            <span className="text-xl md:text-2xl font-bold text-white tracking-tight uppercase">PRESTONWOOD <span className="text-sky-400">TRADING LIMITED</span></span>
+            <img src="/new_logo.png" alt="Logo" className="w-16 h-16 object-cover drop-shadow-md rounded-full border border-slate-200" onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=P+W&background=2563EB&color=fff&rounded=true" }} />
+            <span className="text-xl md:text-2xl text-slate-900 uppercase tracking-tighter flex items-center" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 900, letterSpacing: '-0.06em' }}>PRESTONWOOD <span className="text-sky-600 ml-1.5" style={{ fontFamily: "'Cinzel', serif", fontWeight: 800, letterSpacing: '-0.04em' }}>TRADING LIMITED</span></span>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden xl:flex items-center space-x-8">
-            <a href="#" className="text-slate-300 hover:text-sky-400 font-medium transition-colors">Home</a>
-            <a href="#about" className="text-slate-300 hover:text-sky-400 font-medium transition-colors">About Us</a>
-            <a href="#investment" className="text-slate-300 hover:text-sky-400 font-medium transition-colors">Investment</a>
-            <a href="#products" className="text-slate-300 hover:text-sky-400 font-medium transition-colors">Products</a>
-            <a href="#services" className="text-slate-300 hover:text-sky-400 font-medium transition-colors">Services</a>
-            <a href="#contact" className="text-slate-300 hover:text-sky-400 font-medium transition-colors">Contact</a>
+            <a href="#" className="text-slate-700 hover:text-sky-600 font-medium transition-colors">Home</a>
+            <a href="#about" className="text-slate-700 hover:text-sky-600 font-medium transition-colors">About Us</a>
+            <a href="#investment" className="text-slate-700 hover:text-sky-600 font-medium transition-colors">Investment</a>
+            <a href="#products" className="text-slate-700 hover:text-sky-600 font-medium transition-colors">Products</a>
+            <a href="#services" className="text-slate-700 hover:text-sky-600 font-medium transition-colors">Services</a>
+            <a href="#contact" className="text-slate-700 hover:text-sky-600 font-medium transition-colors">Contact</a>
             <a href="#contact" className="bg-sky-500 text-white px-6 py-2.5 rounded-full font-medium hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/30">
               GET A QUOTE
             </a>
@@ -81,7 +84,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="xl:hidden text-white p-2"
+            className="xl:hidden text-slate-900 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -91,17 +94,18 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="xl:hidden bg-slate-900 shadow-xl absolute w-full left-0 border-t border-slate-800">
+        <div className="xl:hidden bg-white shadow-xl absolute w-full left-0 border-t border-slate-100">
           <div className="flex flex-col p-4 space-y-4">
-            <a href="#" className="text-slate-300 font-medium p-2 hover:bg-slate-800 rounded" onClick={() => setIsMenuOpen(false)}>Home</a>
-            <a href="#about" className="text-slate-300 font-medium p-2 hover:bg-slate-800 rounded" onClick={() => setIsMenuOpen(false)}>About Us</a>
-            <a href="#investment" className="text-slate-300 font-medium p-2 hover:bg-slate-800 rounded" onClick={() => setIsMenuOpen(false)}>Investment</a>
-            <a href="#products" className="text-slate-300 font-medium p-2 hover:bg-slate-800 rounded" onClick={() => setIsMenuOpen(false)}>Products</a>
-            <a href="#services" className="text-slate-300 font-medium p-2 hover:bg-slate-800 rounded" onClick={() => setIsMenuOpen(false)}>Services</a>
-            <a href="#contact" className="text-slate-300 font-medium p-2 hover:bg-slate-800 rounded" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
+            <a href="#" className="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded" onClick={() => setIsMenuOpen(false)}>Home</a>
+            <a href="#about" className="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded" onClick={() => setIsMenuOpen(false)}>About Us</a>
+            <a href="#investment" className="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded" onClick={() => setIsMenuOpen(false)}>Investment</a>
+            <a href="#products" className="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded" onClick={() => setIsMenuOpen(false)}>Products</a>
+            <a href="#services" className="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded" onClick={() => setIsMenuOpen(false)}>Services</a>
+            <a href="#contact" className="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
           </div>
         </div>
       )}
+
     </header>
   );
 };
@@ -223,26 +227,46 @@ const About = () => {
         
         {/* Core Competencies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group">
-            <div className="w-14 h-14 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-              <Globe size={24} />
+          <div className="group flex flex-col bg-slate-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all border border-slate-200">
+            <div className="relative h-48 overflow-hidden">
+              <img src="/global_sourcing.jpg" alt="Global Sourcing Network" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+              <div className="absolute top-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center shadow-lg border border-white/30">
+                <Globe size={24} />
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Global Sourcing Network</h3>
-            <p className="text-slate-600 leading-relaxed text-sm">Unrivaled access to primary producers across Bangladesh and the ASEAN region, ensuring first-tier pricing and continuous supply.</p>
+            <div className="p-8 flex flex-col flex-grow bg-white relative z-10">
+              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">Global Sourcing Network</h3>
+              <p className="text-slate-600 leading-relaxed text-sm flex-grow">Unrivaled access to primary producers across Bangladesh and the ASEAN region, ensuring first-tier pricing and continuous supply.</p>
+            </div>
           </div>
-          <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group">
-            <div className="w-14 h-14 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-              <ShieldCheck size={24} />
+          
+          <div className="group flex flex-col bg-slate-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all border border-slate-200">
+            <div className="relative h-48 overflow-hidden">
+              <img src="/quality_compliance.jpg" alt="Quality & Compliance" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+              <div className="absolute top-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center shadow-lg border border-white/30">
+                <ShieldCheck size={24} />
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Quality & Compliance</h3>
-            <p className="text-slate-600 leading-relaxed text-sm">Strict adherence to international trade standards. Every shipment undergoes rigorous multi-point inspection protocols.</p>
+            <div className="p-8 flex flex-col flex-grow bg-white relative z-10">
+              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">Quality & Compliance</h3>
+              <p className="text-slate-600 leading-relaxed text-sm flex-grow">Strict adherence to international trade standards. Every shipment undergoes rigorous multi-point inspection protocols.</p>
+            </div>
           </div>
-          <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all group">
-            <div className="w-14 h-14 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-              <TrendingUp size={24} />
+          
+          <div className="group flex flex-col bg-slate-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all border border-slate-200">
+            <div className="relative h-48 overflow-hidden">
+              <img src="/market_intelligence.jpg" alt="Market Intelligence" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+              <div className="absolute top-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center shadow-lg border border-white/30">
+                <TrendingUp size={24} />
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Market Intelligence</h3>
-            <p className="text-slate-600 leading-relaxed text-sm">Proprietary data analytics driving strategic procurement. We forecast market shifts to secure highly profitable commodity positions.</p>
+            <div className="p-8 flex flex-col flex-grow bg-white relative z-10">
+              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">Market Intelligence</h3>
+              <p className="text-slate-600 leading-relaxed text-sm flex-grow">Proprietary data analytics driving strategic procurement. We forecast market shifts to secure highly profitable commodity positions.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -312,23 +336,35 @@ const Investment = () => {
           </div>
           
           <div className="lg:col-span-4 flex flex-col gap-8">
-            <div className="bg-slate-900/50 backdrop-blur-md border border-slate-800 p-8 rounded-3xl flex-grow shadow-2xl">
-              <div className="w-12 h-12 bg-sky-500/20 text-sky-400 rounded-xl flex items-center justify-center mb-6">
-                <ShieldCheck size={24} />
+            <div className="group flex flex-col bg-slate-900/50 backdrop-blur-md rounded-3xl overflow-hidden shadow-2xl border border-slate-800 hover:-translate-y-1 transition-all flex-grow">
+              <div className="relative h-40 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Institutional Security" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-90"></div>
+                <div className="absolute top-4 left-4 w-10 h-10 bg-slate-800/80 backdrop-blur-md text-sky-400 rounded-xl flex items-center justify-center border border-slate-700 shadow-lg">
+                  <ShieldCheck size={20} />
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Institutional Security</h3>
-              <p className="text-slate-400 leading-relaxed text-sm">
-                We operate strictly on secured Letters of Credit (LC) and escrow frameworks. Our financial structures are underwritten by top-tier global banking institutions, ensuring zero counterparty risk.
-              </p>
+              <div className="p-6 pt-2 flex flex-col flex-grow relative z-10">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Institutional Security</h3>
+                <p className="text-slate-400 leading-relaxed text-sm flex-grow">
+                  We operate strictly on secured Letters of Credit (LC) and escrow frameworks. Our financial structures are underwritten by top-tier global banking institutions, ensuring zero counterparty risk.
+                </p>
+              </div>
             </div>
-            <div className="bg-slate-900/50 backdrop-blur-md border border-slate-800 p-8 rounded-3xl flex-grow shadow-2xl">
-              <div className="w-12 h-12 bg-sky-500/20 text-sky-400 rounded-xl flex items-center justify-center mb-6">
-                <Globe size={24} />
+            <div className="group flex flex-col bg-slate-900/50 backdrop-blur-md rounded-3xl overflow-hidden shadow-2xl border border-slate-800 hover:-translate-y-1 transition-all flex-grow">
+              <div className="relative h-40 overflow-hidden">
+                <img src="/global_procurement.jpg" alt="Global Arbitrage" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-90"></div>
+                <div className="absolute top-4 left-4 w-10 h-10 bg-slate-800/80 backdrop-blur-md text-sky-400 rounded-xl flex items-center justify-center border border-slate-700 shadow-lg">
+                  <Globe size={20} />
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Global Arbitrage</h3>
-              <p className="text-slate-400 leading-relaxed text-sm">
-                Exploiting structural price differentials between Southeast Asian manufacturing hubs and Western consumer markets. We secure commodities at true source-level pricing.
-              </p>
+              <div className="p-6 pt-2 flex flex-col flex-grow relative z-10">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Global Arbitrage</h3>
+                <p className="text-slate-400 leading-relaxed text-sm flex-grow">
+                  Exploiting structural price differentials between Southeast Asian manufacturing hubs and Western consumer markets. We secure commodities at true source-level pricing.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -364,36 +400,60 @@ const Features = () => {
           </div>
           
           <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-amber-950/60 backdrop-blur border border-amber-700/50 p-8 rounded-3xl flex flex-col items-center text-center hover:bg-amber-800/60 transition-colors group">
-              <div className="w-16 h-16 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner">
-                <Archive size={32} />
+            <div className="group flex flex-col bg-amber-950/60 backdrop-blur rounded-3xl overflow-hidden shadow-2xl border border-amber-700/50 hover:-translate-y-1 transition-all">
+              <div className="relative h-32 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trading Items" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#451a03] to-transparent opacity-90"></div>
+                <div className="absolute top-4 left-4 w-10 h-10 bg-[#78350f]/80 backdrop-blur-md text-amber-400 rounded-xl flex items-center justify-center border border-[#92400e]/50 shadow-lg">
+                  <Archive size={20} />
+                </div>
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2">100+</h3>
-              <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Trading Items</p>
+              <div className="p-6 pt-2 flex flex-col items-center text-center relative z-10">
+                <h3 className="text-4xl font-bold text-white mb-2">100+</h3>
+                <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Trading Items</p>
+              </div>
             </div>
             
-            <div className="bg-amber-950/60 backdrop-blur border border-amber-700/50 p-8 rounded-3xl flex flex-col items-center text-center hover:bg-amber-800/60 transition-colors group sm:mt-12">
-              <div className="w-16 h-16 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner">
-                <Users size={32} />
+            <div className="group flex flex-col bg-amber-950/60 backdrop-blur rounded-3xl overflow-hidden shadow-2xl border border-amber-700/50 hover:-translate-y-1 transition-all sm:mt-12">
+              <div className="relative h-32 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Happy Customers" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#451a03] to-transparent opacity-90"></div>
+                <div className="absolute top-4 left-4 w-10 h-10 bg-[#7c2d12]/80 backdrop-blur-md text-orange-400 rounded-xl flex items-center justify-center border border-[#9a3412]/50 shadow-lg">
+                  <Users size={20} />
+                </div>
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2">500+</h3>
-              <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Happy Customers</p>
+              <div className="p-6 pt-2 flex flex-col items-center text-center relative z-10">
+                <h3 className="text-4xl font-bold text-white mb-2">500+</h3>
+                <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Happy Customers</p>
+              </div>
             </div>
             
-            <div className="bg-amber-950/60 backdrop-blur border border-amber-700/50 p-8 rounded-3xl flex flex-col items-center text-center hover:bg-amber-800/60 transition-colors group sm:-mt-12">
-              <div className="w-16 h-16 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner">
-                <Clock size={32} />
+            <div className="group flex flex-col bg-amber-950/60 backdrop-blur rounded-3xl overflow-hidden shadow-2xl border border-amber-700/50 hover:-translate-y-1 transition-all sm:-mt-12">
+              <div className="relative h-32 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Customer Services" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#451a03] to-transparent opacity-90"></div>
+                <div className="absolute top-4 left-4 w-10 h-10 bg-[#713f12]/80 backdrop-blur-md text-yellow-400 rounded-xl flex items-center justify-center border border-[#854d0e]/50 shadow-lg">
+                  <Clock size={20} />
+                </div>
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2">24/7</h3>
-              <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Customer Services</p>
+              <div className="p-6 pt-2 flex flex-col items-center text-center relative z-10">
+                <h3 className="text-4xl font-bold text-white mb-2">24/7</h3>
+                <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Customer Services</p>
+              </div>
             </div>
             
-            <div className="bg-amber-950/60 backdrop-blur border border-amber-700/50 p-8 rounded-3xl flex flex-col items-center text-center hover:bg-amber-800/60 transition-colors group">
-              <div className="w-16 h-16 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner">
-                <UserCheck size={32} />
+            <div className="group flex flex-col bg-amber-950/60 backdrop-blur rounded-3xl overflow-hidden shadow-2xl border border-amber-700/50 hover:-translate-y-1 transition-all">
+              <div className="relative h-32 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Satisfaction" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#451a03] to-transparent opacity-90"></div>
+                <div className="absolute top-4 left-4 w-10 h-10 bg-[#7f1d1d]/80 backdrop-blur-md text-red-400 rounded-xl flex items-center justify-center border border-[#991b1b]/50 shadow-lg">
+                  <UserCheck size={20} />
+                </div>
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2">100%</h3>
-              <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Satisfaction</p>
+              <div className="p-6 pt-2 flex flex-col items-center text-center relative z-10">
+                <h3 className="text-4xl font-bold text-white mb-2">90%</h3>
+                <p className="text-amber-200/80 font-medium tracking-wide text-sm uppercase">Satisfaction</p>
+              </div>
             </div>
           </div>
         </div>
@@ -519,7 +579,7 @@ const Contact = () => {
             ></iframe>
           </div>
           
-          <div className="lg:w-3/5 p-10 lg:p-16 bg-cyan-950 text-white relative overflow-hidden">
+          <div className="lg:w-3/5 p-10 lg:p-16 bg-emerald-700 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
             
@@ -581,31 +641,52 @@ const Process = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto">
-          {/* Horizontal Line - Hidden on Mobile */}
-          <div className="hidden md:block absolute top-[40px] left-0 w-full h-[1px] bg-slate-800"></div>
+          {/* Wavy SVG Path - Hidden on Mobile */}
+          <div className="hidden md:block absolute top-[40px] left-0 w-full h-[80px] -translate-y-1/2 z-0">
+            <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1000 100" className="overflow-visible">
+              <path 
+                d="M 125,50 Q 250,150 375,50 T 625,50 T 875,50" 
+                fill="none" 
+                stroke="#0ea5e9" 
+                strokeWidth="3" 
+                strokeDasharray="8 8" 
+                vectorEffect="non-scaling-stroke" 
+              />
+              <polygon points="865,42 880,50 865,58" fill="#0ea5e9" />
+            </svg>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center relative z-10">
             {/* Step 1 */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center text-sky-400 font-serif text-xl mb-6 shadow-[0_0_15px_rgba(255,255,255,0.03)]">01</div>
+              <div className="w-20 h-20 rounded-full border-2 border-sky-500 bg-slate-900 flex items-center justify-center text-sky-400 mb-6 shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                <Map size={32} />
+              </div>
               <h4 className="text-xl font-serif font-bold mb-3 text-white">Sourcing</h4>
               <p className="text-sm text-slate-400 leading-relaxed px-2">Origin selection against your grade, volume and landing-cost brief.</p>
             </div>
             {/* Step 2 */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center text-sky-400 font-serif text-xl mb-6 shadow-[0_0_15px_rgba(255,255,255,0.03)]">02</div>
+              <div className="w-20 h-20 rounded-full border-2 border-sky-500 bg-slate-900 flex items-center justify-center text-sky-400 mb-6 shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                <ShieldCheck size={32} />
+              </div>
               <h4 className="text-xl font-serif font-bold mb-3 text-white">Quality Check</h4>
               <p className="text-sm text-slate-400 leading-relaxed px-2">Lot inspection and specification match before the cargo moves.</p>
             </div>
             {/* Step 3 */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center text-sky-400 font-serif text-xl mb-6 shadow-[0_0_15px_rgba(255,255,255,0.03)]">03</div>
+              <div className="w-20 h-20 rounded-full border-2 border-sky-500 bg-slate-900 flex items-center justify-center text-sky-400 mb-6 shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                <Truck size={32} />
+              </div>
               <h4 className="text-xl font-serif font-bold mb-3 text-white">Import / Export & Logistics</h4>
               <p className="text-sm text-slate-400 leading-relaxed px-2">Documentation, freight and customs handled as one movement.</p>
             </div>
             {/* Step 4 */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center text-sky-400 font-serif text-xl mb-6 shadow-[0_0_15px_rgba(255,255,255,0.03)]">04</div>
+              <div className="w-20 h-20 rounded-full border-2 border-rose-500 bg-slate-900 flex items-center justify-center text-rose-400 mb-6 shadow-[0_0_20px_rgba(244,63,94,0.3)] relative group">
+                <Flag size={32} className="relative z-10" />
+                <div className="absolute inset-0 bg-rose-500/20 rounded-full animate-ping"></div>
+              </div>
               <h4 className="text-xl font-serif font-bold mb-3 text-white">Delivery</h4>
               <p className="text-sm text-slate-400 leading-relaxed px-2">On-time release to wholesalers, plants and project sites.</p>
             </div>
@@ -649,9 +730,9 @@ const Testimonial = () => {
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900">What partners say.</h2>
         </div>
         
-        <div className="max-w-4xl mx-auto bg-white p-12 md:p-20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative text-center rounded-sm border border-slate-100 min-h-[350px] flex flex-col justify-center">
+        <div className="max-w-4xl mx-auto bg-sky-500 p-12 md:p-20 shadow-[0_20px_50px_rgba(14,165,233,0.3)] relative text-center rounded-sm min-h-[350px] flex flex-col justify-center">
           <div className="flex justify-center mb-8">
-            <Quote className="text-sky-500 w-12 h-12 fill-sky-500 opacity-20" />
+            <Quote className="text-white w-12 h-12 fill-white opacity-20" />
           </div>
           
           <div className="relative w-full overflow-hidden">
@@ -661,10 +742,10 @@ const Testimonial = () => {
             >
               {testimonials.map((t, idx) => (
                 <div key={idx} className="w-full flex-shrink-0 px-4">
-                  <p className="text-2xl md:text-3xl font-serif text-slate-800 leading-relaxed mb-10">
+                  <p className="text-2xl md:text-3xl font-serif text-white leading-relaxed mb-10">
                     "{t.quote}"
                   </p>
-                  <p className="text-slate-500 text-xs font-bold tracking-[0.1em] uppercase">
+                  <p className="text-sky-100 text-xs font-bold tracking-[0.1em] uppercase">
                     {t.author}
                   </p>
                 </div>
@@ -701,9 +782,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="bg-white/80 backdrop-blur-sm p-4 rounded-lg inline-block mb-4 shadow-md border border-amber-200">
-              <div className="flex items-center space-x-2">
-                 <img src="/logo.jpg" alt="Logo" className="w-20 h-20 object-cover rounded-full border border-amber-200 bg-white" onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=P+W&background=2563EB&color=fff&rounded=true" }} />
-                 <span className="text-2xl font-bold text-amber-950 tracking-tight uppercase">PRESTONWOOD <span className="text-sky-600">TRADING LIMITED</span></span>
+              <div className="flex items-center space-x-1">
+                 <img src="/new_logo.png" alt="Logo" className="w-28 h-28 object-cover rounded-full border-2 border-amber-200 bg-white shadow-sm" onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=P+W&background=2563EB&color=fff&rounded=true" }} />
+                 <span className="text-3xl font-black text-amber-950 tracking-tighter uppercase leading-none">PRESTONWOOD <span className="text-sky-600">TRADING LIMITED</span></span>
               </div>
             </div>
             <p className="text-amber-900 leading-relaxed text-base mb-1 font-medium">Premium commodities. Trusted worldwide.</p>
@@ -763,73 +844,85 @@ const Footer = () => {
 const WhatWeDo = () => {
   const activities = [
     {
-      icon: <Globe size={32} className="text-sky-500" />,
+      icon: <Globe size={24} className="text-sky-500" />,
       title: "Global Procurement",
       description: "Identifying and securing high-quality commodities from trusted international and local suppliers to ensure continuous availability.",
-      bg: "bg-slate-800/50"
+      bg: "bg-slate-800/50",
+      img: "/global_procurement.jpg"
     },
     {
-      icon: <Archive size={32} className="text-emerald-500" />,
+      icon: <Archive size={24} className="text-emerald-500" />,
       title: "Bulk Supply & Indenting",
       description: "Managing large-scale orders for agro-products, textiles, and daily necessities with competitive pricing and reliability.",
-      bg: "bg-slate-800/50"
+      bg: "bg-slate-800/50",
+      img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      icon: <ShieldCheck size={32} className="text-amber-500" />,
+      icon: <ShieldCheck size={24} className="text-amber-500" />,
       title: "Quality Assurance",
       description: "Implementing rigorous multi-point inspections to guarantee that all products meet international trade standards.",
-      bg: "bg-slate-800/50"
+      bg: "bg-slate-800/50",
+      img: "/quality_compliance.jpg"
     },
     {
-      icon: <TrendingUp size={32} className="text-rose-500" />,
+      icon: <TrendingUp size={24} className="text-rose-500" />,
       title: "Trade Finance & Investment",
       description: "Facilitating secure financial structures like Letters of Credit (LC) and escrow to minimize counterparty risk.",
-      bg: "bg-slate-800/50"
+      bg: "bg-slate-800/50",
+      img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      icon: <Clock size={32} className="text-blue-500" />,
+      icon: <Clock size={24} className="text-blue-500" />,
       title: "Logistics & Freight",
       description: "Coordinating seamless ocean freight, customs clearance, and inland transportation for timely deliveries.",
-      bg: "bg-slate-800/50"
+      bg: "bg-slate-800/50",
+      img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      icon: <Handshake size={32} className="text-orange-500" />,
+      icon: <Handshake size={24} className="text-orange-500" />,
       title: "Strategic Partnerships",
       description: "Building long-term, mutually beneficial relationships between ASEAN manufacturers and global consumer markets.",
-      bg: "bg-slate-800/50"
+      bg: "bg-slate-800/50",
+      img: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
   return (
-    <section id="what-we-do" className="py-24 bg-purple-900 text-white relative overflow-hidden">
+    <section id="what-we-do" className="py-24 bg-white text-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-sky-900/10 rounded-full blur-[100px] -translate-x-1/2"></div>
-        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[100px] translate-x-1/2"></div>
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-sky-100/50 rounded-full blur-[100px] -translate-x-1/2"></div>
+        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-emerald-100/50 rounded-full blur-[100px] translate-x-1/2"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="w-8 h-0.5 bg-sky-500"></div>
-            <h5 className="text-sky-400 font-extrabold tracking-widest uppercase text-sm">Work Focus</h5>
+            <h5 className="text-sky-600 font-extrabold tracking-widest uppercase text-sm">Work Focus</h5>
             <div className="w-8 h-0.5 bg-sky-500"></div>
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">What We Do</h2>
-          <p className="text-slate-400 text-lg leading-relaxed">
+          <p className="text-slate-600 text-lg leading-relaxed">
             We operate at the intersection of local expertise and global reach, orchestrating complex supply chains to deliver essential commodities worldwide.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((item, index) => (
-            <div key={index} className={`p-8 rounded-3xl border border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all group backdrop-blur-sm ${item.bg}`}>
-              <div className="w-16 h-16 rounded-2xl bg-slate-950/50 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform">
-                {item.icon}
+            <div key={index} className="group flex flex-col bg-slate-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all border border-slate-200">
+              <div className="relative h-48 overflow-hidden">
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg border border-slate-100">
+                  {item.icon}
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-100 group-hover:text-white transition-colors">{item.title}</h3>
-              <p className="text-slate-400 leading-relaxed text-sm">
-                {item.description}
-              </p>
+              <div className="p-8 flex flex-col flex-grow bg-white relative z-10">
+                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-sky-600 transition-colors">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-sm flex-grow">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
