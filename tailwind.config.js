@@ -5,6 +5,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nav: ['Outfit', 'sans-serif'],
+      },
       colors: {
         brand: {
           cyan: '#00C2FF',
