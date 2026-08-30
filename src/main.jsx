@@ -498,7 +498,7 @@ const Services = () => {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/2">
             <div className="relative rounded-2xl overflow-hidden shadow-sm border border-slate-800 bg-slate-800 p-2">
-              <img src="/services.png" alt="Services Team" className="w-full h-auto object-contain rounded-xl mix-blend-multiply" onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" }} />
+              <img src="/services.png" alt="Services Team" className="w-full h-auto object-cover rounded-xl" onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" }} />
             </div>
           </div>
           
